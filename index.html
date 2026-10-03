@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="ThreadAtlas turns discussions into reviewable structured datasets with provenance and visualizations." />
+  <title>ThreadAtlas — discussions into evidence-backed data</title>
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <a class="brand" href="#"><span class="brand-mark">T</span><span>ThreadAtlas<small>discussion intelligence</small></span></a>
+      <nav>
+        <button class="nav-item active" data-view="review"><span>⌁</span>Review queue <b id="review-count">0</b></button>
+        <button class="nav-item" data-view="table"><span>▦</span>Dataset</button>
+        <button class="nav-item" data-view="groups"><span>◫</span>Groups</button>
+        <button class="nav-item" data-view="chart"><span>⌇</span>Visualize</button>
+        <button class="nav-item" data-view="sources"><span>◉</span>Sources</button>
+        <button class="nav-item" data-view="activity"><span>↻</span>History</button>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="storage-card"><span class="pulse"></span><div><strong id="storage-mode">Local-only workspace</strong><small>No source leaves this browser in Phase A</small></div></div>
+        <button class="danger-link" id="clear-workspace">Reset workspace</button>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div><span class="eyebrow">RE-375 · CLEAN-ROOM PROTOTYPE</span><h1>Side project signals</h1><p>Turn a messy discussion into a dataset you can inspect, trust, and see.</p></div>
+        <div class="stats">
+          <div><strong id="dataset-count">0</strong><span>items</span></div>
+          <div><strong id="source-count">0</strong><span>sources</span></div>
+          <div><strong id="suspicious-count">0</strong><span>shielded</span></div>
+        </div>
+      </header>
+
+      <section class="source-composer">
+        <div class="composer-head"><div><span class="eyebrow">ADD EVIDENCE</span><h2>Paste a discussion</h2></div><button id="sample" class="text-button">Load sample</button></div>
+        <textarea id="source-input" placeholder="Paste comments or discussion blocks here. ThreadAtlas proposes changes; it does not silently mutate your collection."></textarea>
+        <div class="composer-foot"><span>Tip: natural text works best when names, URLs, dates, votes, comments, categories, or status are mentioned.</span><button id="analyze" class="primary">Analyze discussion →</button></div>
+      </section>
+
+      <div id="empty-state" class="hero-empty">
+        <div class="orb">⌁</div><h2>Conversation is not a database.<br/>ThreadAtlas makes the bridge inspectable.</h2>
+        <p>Extract candidates, keep raw evidence, normalize values, review conflicts, then explore the accepted dataset.</p>
+        <div class="principles"><span>✓ review before write</span><span>✓ field-level provenance</span><span>✓ deterministic charts</span></div>
+      </div>
+
+      <section class="workspace-panel" data-panel="review">
+        <div class="section-head"><div><span class="eyebrow">PROPOSED CHANGES</span><h2>Review queue</h2></div><span class="section-note">Nothing mutates the dataset until you accept it.</span></div>
+        <div class="schema-line"><span>Observed schema</span><div id="schema-chips"></div></div>
+        <div id="review-queue" class="review-grid"></div>
+      </section>
+
+      <section class="workspace-panel" data-panel="table" hidden>
+        <div class="section-head"><div><span class="eyebrow">ACCEPTED DATA</span><h2>Dataset</h2></div><input id="dataset-search" class="search" type="search" placeholder="Filter items…" /></div>
+        <div id="dataset-table"></div>
+      </section>
+
+      <section class="workspace-panel" data-panel="groups" hidden>
+        <div class="section-head"><div><span class="eyebrow">FACETS</span><h2>Group the collection</h2></div><select id="group-by"><option value="">No grouping</option></select></div>
+        <div id="groups" class="groups-grid"></div>
+      </section>
+
+      <section class="workspace-panel" data-panel="chart" hidden>
+        <div class="section-head"><div><span class="eyebrow">VISUAL EXPLORATION</span><h2 id="chart-title">Chart</h2><p id="chart-reason" class="section-note"></p></div><div class="chart-controls"><select id="chart-type"><option value="bar">Bar</option><option value="scatter">Scatter</option></select><select id="chart-x"></select><select id="chart-y"></select></div></div>
+        <div id="chart" class="chart-surface"></div>
+      </section>
+
+      <section class="workspace-panel" data-panel="sources" hidden>
+        <div class="section-head"><div><span class="eyebrow">PROVENANCE</span><h2>Source ledger</h2></div><span class="section-note">Immutable source hashes keep accepted values traceable.</span></div>
+        <div id="source-ledger" class="source-list"></div>
+      </section>
+
+      <section class="workspace-panel" data-panel="activity" hidden>
+        <div class="section-head"><div><span class="eyebrow">REVISION TRACE</span><h2>Workspace history</h2></div><span class="section-note">Every accept, merge, reject, and source analysis is recorded locally.</span></div>
+        <div id="activity-log" class="activity-list"></div>
+      </section>
+    </main>
+  </div>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>
