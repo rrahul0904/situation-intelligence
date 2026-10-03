@@ -1,4 +1,4 @@
-# RE-374 implementation plan
+# RE-375 implementation plan
 
 ## Phase A — reviewable discussion-to-dataset slice
 Status: implemented on the feature branch when exact-head verification passes.
