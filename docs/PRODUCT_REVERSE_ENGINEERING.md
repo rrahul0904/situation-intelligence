@@ -1,8 +1,12 @@
-# RE-374 — Product reverse-engineering brief
+# RE-375 — Product reverse-engineering brief
 
 ## Clean-room boundary
 
 ThreadAtlas is an original implementation informed only by public behavior and public writing. We do **not** copy wiki.bot source code, prompts, private APIs, data, branding, visual assets, or hidden implementation details.
+
+## Canonical tracker reconciliation
+
+ThreadAtlas was initially staged under provisional RE-374 before the newest canonical tracker branch was available. That branch already assigned RE-374 to AgenticOS Agent Studio, so ThreadAtlas was reconciled to **RE-375**. The earlier RE-374 branch/PR are historical only.
 
 ## Public behavior observed (2026-10-02)
 
@@ -22,7 +26,7 @@ The public wiki.bot product/blog surfaces establish the following behavioral ide
 
 ## Public weakness / improvement signals
 
-At the research snapshot the launch post had no substantive accessible feedback body to incorporate, so we do not manufacture community sentiment. Instead Phase A turns visible product limitations and creator-stated uncertainty into engineering requirements:
+At the research snapshot the launch post had no substantive accessible independent feedback body to incorporate, so we do not manufacture community sentiment. Instead Phase A turns visible product limitations and creator-stated uncertainty into engineering requirements:
 
 1. The chart gallery explicitly labels several visualizations as needing more work. ThreadAtlas starts with fewer chart types and makes selection explainable and overridable.
 2. The creator describes visualization selection as the hard part. ThreadAtlas separates chart recommendation from data extraction so each can be evaluated independently.
