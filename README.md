@@ -1,6 +1,6 @@
 # ThreadAtlas
 
-**RE-374 · discussion-to-dataset intelligence**
+**RE-375 · discussion-to-dataset intelligence**
 
 ThreadAtlas turns conversational source material into a typed, reviewable collection with field-level provenance, dedupe/merge handling, revision history, grouping, and visualizations.
 
@@ -58,6 +58,8 @@ See:
 - `docs/PRODUCT_REVERSE_ENGINEERING.md`
 - `docs/ARCHITECTURE.md`
 - `docs/IMPLEMENTATION_PLAN.md`
-- [RE-374 issue](https://github.com/rrahul0904/situation-intelligence/issues/1)
+- [RE-375 issue](https://github.com/rrahul0904/situation-intelligence/issues/1)
+
+The earlier `research/re374-thread-atlas` branch / draft PR #2 are retained only as provisional pre-reconciliation history. Canonical work continues on `research/re375-thread-atlas`.
 
 This branch is **not** labeled production-ready until hosted exact-SHA runtime verification and later persistence/authentication gates are proven.
